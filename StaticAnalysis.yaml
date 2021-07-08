@@ -17,6 +17,7 @@ phases:
     commands:
 # Running Insider CLI for SAST Check    
       - echo Starting Insider CLI scanning `date` in `pwd`
+      - git clone https://github.com/beuhmoment/musician-app.git
       - insider -tech javascript -target musician-app -exclude tests/* -exclude node_modules/*
 reports:
   musician-test:
