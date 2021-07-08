@@ -17,7 +17,6 @@ phases:
     commands:
 # Running Insider CLI for SAST Check    
       - echo Starting Insider CLI scanning `date` in `pwd`
-      - insider --tech java -target . -security 10
       - insider -tech javascript -target . -exclude tests/* -exclude node_modules/*
 reports:
   musician-test:
