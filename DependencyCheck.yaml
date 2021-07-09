@@ -17,8 +17,10 @@ phases:
       - echo Starting OWASP Dependency Check scanning `date` in `pwd`    
       - mkdir -p nvd  # Will store nvd here
       - pwd
-      - ls -l
-      - ./dependency-check/bin/dependency-check.sh --project my-project -s . -f JUNIT
+      - cd ~
+      - git clone https://github.com/beuhmoment/musician-app.git
+      - cd musician-app
+      - ./dependency-check/bin/dependency-check.sh --project musician-app --scan musician-app/package.json
 # Caching the nvd database so each run doesn't download the
 # entire nvd
 cache:
