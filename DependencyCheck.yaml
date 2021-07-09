@@ -18,7 +18,7 @@ phases:
       - mkdir -p nvd  # Will store nvd here
       - pwd
       - git clone https://github.com/beuhmoment/musician-app.git
-      - ./dependency-check/bin/dependency-check.sh --project musician-app --scan ./musician-app/package.json --out ./musician-app
+      - ./dependency-check/bin/dependency-check.sh --project musician-app --scan ./musician-app/package-lock.json --out ./musician-app
 # Caching the nvd database so each run doesn't download the
 # entire nvd
 cache:
