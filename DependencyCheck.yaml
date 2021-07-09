@@ -17,8 +17,7 @@ phases:
       - echo Starting OWASP Dependency Check scanning `date` in `pwd`    
       - mkdir -p nvd  # Will store nvd here
       - pwd
-      - git clone https://github.com/beuhmoment/musician-app.git
-      - ./dependency-check/bin/dependency-check.sh --project musician-app --scan ./musician-app/package-lock.json --out .
+      - ./dependency-check/bin/dependency-check.sh --project musician-app --scan package-lock.json --out .
       - ls
 # Caching the nvd database so each run doesn't download the
 # entire nvd
@@ -28,12 +27,12 @@ cache:
 reports:
   musician-test:
     files:
-      - dependency-check-junit.xml
+      - dependency-check-report.html
     discard-paths: 'yes'
-    file-format: JunitXml
+
 artifacts: 
   files: 
   - './dependency-check-report.html'
-  - '*junit.xml'
+
   
 
