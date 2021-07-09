@@ -20,7 +20,7 @@ phases:
       - cd ~
       - git clone https://github.com/beuhmoment/musician-app.git
       - cd musician-app
-      - ./dependency-check/bin/dependency-check.sh --project musician-app --scan musician-app/package.json --out musician-app/DependencyReport
+      - ./dependency-check/bin/dependency-check.sh --project musician-app --scan musician-app/package.json --out musician-app
 # Caching the nvd database so each run doesn't download the
 # entire nvd
 cache:
