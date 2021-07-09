@@ -30,7 +30,4 @@ reports:
       - dependency-check-junit.xml
     discard-paths: 'yes'
     file-format: JunitXml
-artifacts: 
-  files: 
-  - './dependency-check-report.html'
-  - '*junit.xml'
+
