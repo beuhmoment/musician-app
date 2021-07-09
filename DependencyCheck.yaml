@@ -27,11 +27,12 @@ cache:
 reports:
   musician-test:
     files:
-      - dependency-check-report.html
+      - dependency-check-junit.xml
     discard-paths: 'yes'
-    
+    file-format: JunitXml
 artifacts: 
   files: 
-  - './musician-app/dependency-check-report.html'
+  - './dependency-check-report.html'
+  - '*junit.xml'
   
 
