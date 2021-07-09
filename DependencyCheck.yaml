@@ -29,5 +29,5 @@ reports:
     files:
       - dependency-check-junit.xml
     discard-paths: 'yes'
-    file-format: JunitXml
+    
 
