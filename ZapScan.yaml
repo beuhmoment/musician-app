@@ -16,6 +16,7 @@ phases:
       - ./zap.sh -cmd -quickurl http://finalyearproj-env.eba-fx5z7usi.ap-southeast-1.elasticbeanstalk.com/ -quickprogress -quickout ./report.xml
       - ls
       - pwd
+      - cat report.xml
 reports:
   musician-test:
     files:
