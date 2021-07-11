@@ -23,4 +23,4 @@ reports:
     discard-paths: 'yes'
 artifacts: 
   files: 
-  - /codebuild/output/src315238938/src/ZAP_2.10.0/report.xml
+  - /codebuild/output/src051680975/src/ZAP_2.10.0/./report.xml
