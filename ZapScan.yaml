@@ -19,7 +19,7 @@ phases:
 reports:
   musician-test:
     files:
-      - zapreport.xml
+      - ZAP_2.10.0/zapreport.xml
     discard-paths: 'yes'
 artifacts: 
   files: 
