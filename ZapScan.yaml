@@ -13,14 +13,14 @@ phases:
     commands:
       - ls
       - cd ZAP_2.10.0
-      - ./zap.sh -cmd -quickurl http://finalyearproj-env.eba-fx5z7usi.ap-southeast-1.elasticbeanstalk.com/ -quickprogress -quickout ./report.xml
+      - ./zap.sh -cmd -quickurl http://finalyearproj-env.eba-fx5z7usi.ap-southeast-1.elasticbeanstalk.com/ -quickprogress -quickout ./zapreport.xml
       - ls
       - pwd
 reports:
   musician-test:
     files:
-      - report.xml
+      - zapreport.xml
     discard-paths: 'yes'
 artifacts: 
   files: 
-  - /codebuild/output/src051680975/src/ZAP_2.10.0/./report.xml
+  - ./zapreport.xml
