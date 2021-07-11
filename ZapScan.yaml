@@ -7,7 +7,7 @@ phases:
      nodejs: 10
     commands:
       - wget https://github.com/zaproxy/zaproxy/releases/download/v2.10.0/ZAP_2.10.0_Linux.tar.gz
-      - tar –xvzf ZAP_2.10.0_Linux.tar.gz     
+      - tar –xf ZAP_2.10.0_Linux.tar.gz     
   build:
     commands:
       - cd ZAP_2.10.0
