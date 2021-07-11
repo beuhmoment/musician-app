@@ -1,0 +1,22 @@
+---
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+     nodejs: 10
+    commands:
+      - wget https://github.com/zaproxy/zaproxy/releases/download/v2.10.0/ZAP_2.10.0_Linux.tar.gz
+      - tar –xvzf documents.tar.gz       
+  build:
+    commands:
+      - cd ZAP_2.10.0
+      - ./zap.sh -cmd -quickurl https://bazaar.moe/ -quickprogress -quickout ./report.xml
+reports:
+  musician-test:
+    files:
+      - report.xml
+    discard-paths: 'yes'
+artifacts: 
+  files: 
+  - './report.xml'
