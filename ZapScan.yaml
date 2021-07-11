@@ -23,4 +23,4 @@ reports:
     discard-paths: 'yes'
 artifacts: 
   files: 
-  - ./zapreport.xml
+  - ZAP_2.10.0/zapreport.xml
