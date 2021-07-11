@@ -12,7 +12,8 @@ phases:
   build:
     commands:
       - cd ZAP_2.10.0
-      - ./zap.sh -cmd -quickurl http://finalyearproj-env.eba-fx5z7usi.ap-southeast-1.elasticbeanstalk.com/ -quickprogress -quickout ./report.xml
+      - ./zap.sh -cmd -quickurl http://finalyearproj-env.eba-fx5z7usi.ap-southeast-1.elasticbeanstalk.com/ -quickprogress -quickout report.xml
+      - ls
 reports:
   musician-test:
     files:
