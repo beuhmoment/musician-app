@@ -16,7 +16,6 @@ phases:
       - ./zap.sh -cmd -quickurl http://finalyearproj-env.eba-fx5z7usi.ap-southeast-1.elasticbeanstalk.com/ -quickprogress -quickout ./report.xml
       - ls
       - pwd
-      - cat report.xml
 reports:
   musician-test:
     files:
@@ -24,4 +23,4 @@ reports:
     discard-paths: 'yes'
 artifacts: 
   files: 
-  - './report.xml'
+  - /codebuild/output/src315238938/src/ZAP_2.10.0/report.xml
