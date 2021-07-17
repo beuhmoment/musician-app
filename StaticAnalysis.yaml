@@ -7,17 +7,14 @@ phases:
      nodejs: 10
     commands:
 # Installing Insider CLI to do SAST Check
-      - echo Installing Insider CLI - `pwd`  
-      - go get github.com/insidersec/insider/cmd/insider      
-      - wget https://github.com/insidersec/insider/releases/download/2.1.0/insider_2.1.0_linux_x86_64.tar.gz
-      - tar -xf insider_2.1.0_linux_x86_64.tar.gz    
-      - chmod +x insider
-      - echo Insider CLI installation complete `date`   
+      - nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://127.0.0.1:2375 --storage-driver=overlay2&
+      - timeout 15 sh -c "until docker info; do echo .; sleep 1; done" 
   build:
     commands:
 # Running Insider CLI for SAST Check    
-      - echo Starting Insider CLI scanning `date` in `pwd`
-      - insider -tech javascript -target . -exclude tests/* -exclude node_modules/*
+      - docker pull insidersec/insider:latest
+      - docker run --rm -v $(pwd):/musician-app insidersec/insider -tech javascript -target /musician-app
+
 reports:
   musician-test:
     files:
