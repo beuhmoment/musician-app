@@ -12,12 +12,13 @@ phases:
   build:
     commands:
 # Running Insider CLI for SAST Check    
-      - git clone https://github.com/beuhmoment/musician-app.git
       - docker pull insidersec/insider:latest
-      - docker run --rm -v $(pwd):/musician-app insidersec/insider:latest -tech javascript -target /musician-app
-      - cd ..
+      - docker run --rm -v $(pwd) insidersec/insider:latest -tech javascript -target .
+      - docker comit container image
+      - docker run -ti --entrypoint=sh image
       - cd /opt/insider
-
+      - ls
+      
 reports:
   musician-test:
     files:
