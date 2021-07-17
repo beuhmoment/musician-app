@@ -12,11 +12,9 @@ phases:
   build:
     commands:
 # Running Insider CLI for SAST Check    
+      - ls
       - docker pull insidersec/insider:latest
       - docker run --rm -v $(pwd) insidersec/insider:latest -tech javascript -target .
-      - docker comit container image
-      - docker run -ti --entrypoint=sh image
-      - cd /opt/insider
       - ls
       
 reports:
