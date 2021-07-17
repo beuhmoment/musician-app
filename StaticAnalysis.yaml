@@ -15,6 +15,7 @@ phases:
       - git clone https://github.com/beuhmoment/musician-app.git
       - docker pull insidersec/insider:latest
       - docker run --rm -v $(pwd):/musician-app insidersec/insider:latest -tech javascript -target /musician-app
+      - cd ..
       - cd /opt/insider
 
 reports:
