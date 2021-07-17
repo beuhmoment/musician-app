@@ -3,27 +3,21 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-     nodejs: 10
     commands:
-      - echo Installing OWASP Dependency Check SCA Tool - `pwd` 
-      - wget https://github.com/jeremylong/DependencyCheck/releases/download/v6.1.6/dependency-check-6.1.6-release.zip 
-      - wget https://github.com/jeremylong/DependencyCheck/releases/download/v6.1.6/dependency-check-6.1.6-release.zip.asc
-      - unzip dependency-check-*-release.zip
-      - rm -rf dependency-check-*-release.zip
-      - export PATH=dependency-check/bin:$PATH        
+      - DC_VERSION="latest"
+      - DC_DIRECTORY=$HOME/OWASP-Dependency-Check
+      - DATA_DIRECTORY="$DC_DIRECTORY/data"
+      - CACHE_DIRECTORY="$DC_DIRECTORY/data/cache"
+      - mkdir -p "$DATA_DIRECTORY"
+      - mkdir -p "$CACHE_DIRECTORY"
+      
   build:
     commands:
       - echo Starting OWASP Dependency Check scanning `date` in `pwd`    
-      - mkdir -p nvd  # Will store nvd here
-      - pwd
-      - ./dependency-check/bin/dependency-check.sh --project musician-app --scan package-lock.json --out .
+      - docker pull owasp/dependency-check:$DC_VERSION
       - ls
-# Caching the nvd database so each run doesn't download the
-# entire nvd
-cache:
-  paths:
-    - nvd/**/*
+      - docker run --rm -e user=$USER -u $(id -u ${USER}):$(id -g ${USER}) --volume $(pwd):/src:z --volume "$DATA_DIRECTORY":/usr/share/dependency-check/data:z --volume $(pwd)/odc-reports:/report:z owasp/dependency-check:$DC_VERSION --scan package-lock.json --project musician_app --out . 
+      - ls
 reports:
   musician-test:
     files:
