@@ -14,6 +14,8 @@ phases:
 # Running Insider CLI for SAST Check    
       - docker pull insidersec/insider:latest
       - docker run --rm -v $(pwd):/musician-app insidersec/insider -tech javascript -target /musician-app
+      - ls
+      - pwd
 
 reports:
   musician-test:
