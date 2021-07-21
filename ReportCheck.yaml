@@ -1,0 +1,20 @@
+---
+version: 0.2
+
+phases:
+  install:
+    commands:
+# Installing Git Secret to check for passwords and other sensitive information in the repository
+      - ls 
+  build:
+    commands:
+# Running awslabs/git-secrets to check for passwords and other sensitive information to a git repository      
+      
+reports:
+  musician-test:
+    files:
+      - report.txt
+    discard-paths: yes
+artifacts: 
+  files: 
+  - 'report.txt'
