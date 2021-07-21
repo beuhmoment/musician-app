@@ -8,7 +8,7 @@ phases:
       - ls 
   build:
     commands:
-# Running awslabs/git-secrets to check for passwords and other sensitive information to a git repository      
+# Run    
       
 reports:
   musician-test:
