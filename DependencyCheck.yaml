@@ -26,11 +26,13 @@ reports:
   musician-test:
     files:
       - dependency-check-report.html
+      - dependency-check-report.json
     discard-paths: 'yes'
 
 artifacts: 
   files: 
   - './dependency-check-report.html'
+  - './dependency-check-report.json'
 
   
 
